@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import Footer from './components/Footer'
-import Preloading from './components/preloading'
+import Preloading from './components/Preloading.jsx'
 import Userheader from './user/components/Userheader'
 
 import Home from './user/pages/Home'
@@ -19,7 +19,7 @@ import Payementfail from './user/pages/Payementfail'
 import Payemntsuccess from './user/pages/Payemntsuccess'
 
 import Authentication from './pages/Authentication'
-import Pnf from './pages/pnf'
+import Pnf from './pages/Pnf.jsx'
 
 import Dashboard from './admin/pages/Dashboard'
 import Resource from './admin/pages/Resource'
