@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Footer from './components/Footer'
 import Preloading from './components/Preloading.jsx'
 import Userheader from './user/components/Userheader'
-
+import Pnf from './pages/pnf.jsx'
 import Home from './user/pages/Home'
 import ViewBook from './user/pages/ViewBook'
 import Allbooks from './user/pages/Allbooks'
@@ -19,7 +19,6 @@ import Payementfail from './user/pages/Payementfail'
 import Payemntsuccess from './user/pages/Payemntsuccess'
 
 import Authentication from './pages/Authentication'
-import Pnf from './pages/Pnf.jsx'
 
 import Dashboard from './admin/pages/Dashboard'
 import Resource from './admin/pages/Resource'
