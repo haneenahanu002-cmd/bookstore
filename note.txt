@@ -1,0 +1,234 @@
+backened 
+------------------------------------
+backened of a web app is the server -side part of the application trhat users do not directly see. IT HANDLE logic, database operators, authentication,APIs , and communication between front-end and database. 
+-main responsibilities of back end
+      -server logic
+      -database management 
+      -authentication and security 
+      -API's 
+      -business logic 
+
+- popular backened tecnhologies: javascript(node.js),python,php,java,c# 
+    -frameworks:express.js,Nextjs,Django,Larvel,Spring Boot.....
+    -database used with backened : MongoDB , Mysql ,postgresql ,SQlite,firebase.........    
+
+
+-Database 
+------------------------------
+- a Databse is an organized collection  of data stored electronically so it can easily accessed , managed and updated .
+-2 types of database 
+    - relational database(sql based)
+    -noSql databse 
+-3 SQL: structured qurey language - used to intteract with relational DB 
+     -here data are stored as table
+     -row(record): one entry in table indicate one item stored in table
+     -column(field): attribute of data stored in table
+
+
+MongoDB
+----------------------------
+-MongoDB is noSql , document-oriented DB, that store data in JSON like format(Bson) instead o table 
+-features :-
+    -schema-less(flexible structure)
+    -scalable
+    -designed for modern app
+
+  -key features  
+    -collection: equalent to table in sql
+    -document : a single record (json-like object)
+    -Bson : binary version of JSON used internally 
+    -_id fiels: every document has a unique key-value
+
+    authentication and authorization:-
+        - authentication is the process of verfying the identify of a user-
+        - authorization means checking what permissions a user has after login. performed using JWT (json web token)
+
+    jwt 
+    --------------
+    1. jwt is a secure way to authenticate users and share user data between client and server.
+    2 . what is jwt : when user logs in successfully :
+         -server creates a token using jwt 
+         - sends token to client
+         -client store token
+         -client send token with future requests
+    3. jwt structure: it has parts - Header.payload.signature
+       - header: algorithm + toke type 
+       -payload : user data can be stored for future use
+       -signature: used to verify token is valid.      
+    4. install json webtoken using npm install jsonwebtoken
+    5. create token :use  sign method       
+    6. verify token: use verify method
+    
+
+-CURD opertions 
+    -Read :TO get documents from collection
+      -find():user to get all documents, usage"collection_name. find(), to query from collection: find(condition),
+      condition should be in object 
+      -findOne(condition): used to get single document 
+    -create: to insert document into the collection 
+         -insertOne(document): used to insert on document into a collections , document can be an object .
+         -insertMany({doc1,.....,doc3,...}) : used to insert multiple documents at a time into  a collection.
+         -count(): to get totll numbers . synatx: db. users.find().count()
+    -update :to update document
+        -updateOne():to upadate single document
+        -updateMany(): to update multiple document at a time
+    -qurey operators:
+          -comparison: syntax: { field:{comparision_query:value}}       
+          ex: $eq , $gt ,$ne , $gte ,$lte , $in $lt
+
+         -logical : synatx:{logical_query:[{field:value1},{field2:value2}]}
+               ex: $and ,$or ,$not        
+
+         -evalution : synatax:{field:{evaluation-query:value}}
+             ex:$regex,$text,$where      
+        -additional operators:count(),limit(),sort()
+           -limit : can get limit data only synatax  
+
+        -update operators:
+        field:$inc ,$set , $unset ,$rename , $currentdata
+        -array: $pop , $push
+
+    -indexing: used to make data searching faster in MongoDB
+        -why use indexing: faster find() queries, sorting, improves search by fields, better performance for large data.
+          -syntax: db.collection_name.createIndex({fieldname:1})       
+
+
+
+NODE.js
+---------------------------------------------------
+-node.js  core= runtime + event loop + async +module + server + APIs
+
+2. features
+    - FAST performance : it uses vB engine
+    -Asynchronous & non-blocking : files reading , API requests , database queries
+    -single threaded with event loop: Asynchronous function  handled smoothly.
+    -scalable 
+    -Huge pakage ecosystem
+    -cross platform
+    -real-time communication : often used with socket.IO 
+    -Easy API develpoment
+    -Open source 
+    -json friendly
+    -streaming support
+    
+
+3.core concept in node.js 
+       -runtime environment:node.js allows javascript to run outside the browser.
+       -event loop: node.js event loop to handle multiple request efficiently
+       -non-blocking I/O : node .js does not wait for one track to finish before starting another.
+        -Modules:Modules allows us to divide our node.js application into separate files. each files contain separate functionality.
+                -Build-in modules: http, fs ,path,os 
+                -common js (require / module.exports): used to import/ export files.
+                -HTTP server : create server using http
+                -Asynchronous Programming : callback , promise , async/await
+                -files system : read/write files using fs
+                -streams: used to handle large file efficiently.
+                -buffer :Temparary memory storage for binary data , used in file upload , stream , network data
+                -npm(node pakage manager): npm is used to install and mange packages .
+                -global objects-node.js global object contaning built - in variable/ functions . it can used node app without import/ export, ex: console, settimeout, process....
+                -process: its a node.js global objects which provides information and control ever the current running process in node app.
+                   -environment variable : are secret data or configuration of an application , to hold env variables we have to create env file, it can be accessed via process.env in node app
+
+   cors - cors origin resousrce sharing
+   ----------------------------------------
+   1. it is a browser security feature that control whther a frontend from one origin can access resource from another origin
+   2, origin = protocol + domain + protocol
+   3. if front - end backened have fifferent origin, browser any block request ,
+  4. to enable cors  
+      - install cors packages : npm pakage vors
+      - use cors in the cors
+   5. cors = permission system for cross -orgin   
+
+
+EXPRESS JS 
+-----------------------------------------
+1. express.js is a fast , animal and flexible web framework for node.js.
+2. its uses: web servers,  REST APIs,backened application , mern stack backend 
+3. use Express.js : easy routing , middleware support , REST API creation , fast  develpment , works with MongoDB ,large ecosystem .
+
+
+steps to create a express server
+--------------------------------------------
+1. create a folder to hold all files of projects
+2. nom init -y : create project configuration file (package.json) using the command :npm init -y
+3. update package.json file script by start as " node index.js " ,where index.js is the main entry file of project. 
+create file .env to hold project scret/configuration data
+4 . install packages : express , cors , dotenv
+ 5. create .gitgnore file  to add files/folder to avoid when adding to git
+ 6. create index.js file where we define express server   
+      - import all packages
+      -then create server using express packages
+      -anable cors in server
+
+7.then .env oru port run cheyyaa
+8. indexil let .env portinee add cheyaa -set up port number to run server in internet     
+     -//start server to listen client request to this port
+     -server succefull run anuoo ariyan oru console kodukaa 
+     -then run server using node index.js
+9.    
+
+MONGODB SETUP OKEE CHEYITHIYTT
+mongoose
+-------------------------------------
+-to connect node js with mongoDB the most common wait is using mongoose
+-mongoose is an open-source object data modeling (ODM) library for mongoDB.designed for use in async node .js 
+3. users  
+     -structured schema-based solution to model application data
+     -build-in validation
+     -type casting
+     -middleware to simple data handling
+4. schema : sturured of document atored in a collection
+    - to create schema: create an object for schema class of mongoose.
+5.Model: it represents the collection in mongoDB and is used to interact with documents in that collection.
+    - to create model use mongoose model() method
+6.use model for CURD
+     -create 
+         -1. create an object for model , save the object in order to savailable in mongoDB
+         -2. create methode to insert document , syntax: model_name.create({key:value.....})
+     -read 
+        1. find/findOne/findById
+    - update 
+      -1. updateOne/updateMany/findByIdAndUpdate 
+    -delete
+       -1. deleteOne/deleteMany/findByIdAndDelete             
+
+
+DATABSE MONGDB CONECT CHEYUNNATH - 
+---------------------------------------------------------
+1. INSTALL MNGOOS LIBARABRY :  npm i mongoose
+2.connect cheyyan : confid folder -> db.js-> import mongoose and add .env  -> coonect.mongoose -> run the file 
+
+
+
+jwt 
+
+
+-middleware: function that runs between the request and response cycle 
+   -middleware can   
+   -pass control to the next middleware/ conntroller function
+   -sendes response directly
+   -handles error
+-to create middleware: create a function with minimum 3 arugments (req,res,next)
+
+
+MULTER
+-------------------------------
+ 1. multer is a node.js middleware for handling multipart/formdata
+2 -to use multer : installation : npm i multe
+3. usage of multer
+   -multer adds a body object and file orfiles object to the request object 
+   -the body object contains the values of the text fields of the forest 
+   -the files or file object contains the file upload via the format
+   - define  storage for uploaded files 
+   -it can applying filtering as well
+
+
+
+   context API
+   ------------------------------------------------------------
+   - the context api in react is a build-in function used to share data acroess components without passing props manually at every level.
+   -context api solves props deilling by creating a global-like state accessable anywhere in the component tree 
+   -core concepts
+       -1. createContext (): create a contaxt object
+       -2.provider:wraps components and provide data
+       -3.useContext():used inside components to access context data

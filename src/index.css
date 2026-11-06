@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@100..900&family=Wallpoet&display=swap');
+@import "tailwindcss";
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 18s linear infinite;
+}
