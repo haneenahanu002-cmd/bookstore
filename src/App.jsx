@@ -67,7 +67,6 @@ function App() {
 
         <Route path="/all-books" element={<Allbooks />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/Careers" element={<Careers />} />
 
         {/* User Routes */}
         <Route
