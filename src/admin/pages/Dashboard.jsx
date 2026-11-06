@@ -1,6 +1,6 @@
 
 import React from "react";
-import AdminHeader from "../components/AdminHeader";
+import AdminHeader from "../components/Adminheader";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
